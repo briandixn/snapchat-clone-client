@@ -1,0 +1,53 @@
+.loginlink{
+  font-size: 60px;
+    background-color: rgb(255, 90, 96);
+    font-stretch: expanded;
+}
+
+.registerlink{
+  font-size: 60px;
+  background-color: #57baf5;
+  color: white;
+}
+
+.logs{
+  list-style: none;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  margin: auto;
+  padding: inherit;
+  width: 100%;
+}
+
+ul{
+  text-align: center;
+
+}
+.snaplogo{
+  width: 100%;
+  margin: auto;
+  background-color: yellow;
+  height: 800px;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+
+}
+h3{
+  margin: 0px;
+  text-shadow: 2px 2px black;
+  
+}
+li{
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+  display: block;
+
+
+}
+.link{
+  color: white;
+  text-decoration: none;
+}

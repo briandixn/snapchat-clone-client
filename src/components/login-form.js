@@ -3,6 +3,8 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+import "./login-form.css";
+import {Link, Redirect} from 'react-router-dom';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -10,6 +12,7 @@ export class LoginForm extends React.Component {
     }
 
     render() {
+
         let error;
         if (this.props.error) {
             error = (
@@ -18,6 +21,15 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+
+
+        //____________________________________________
+          if (this.props.loggedIn) {
+              return <Redirect to="/dashboard" />;
+              console.log("loggedin");
+          }
+          //____________________________________________
+
         return (
             <form
                 className="login-form"
@@ -25,7 +37,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+                <label className="login-labels" htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
@@ -33,7 +45,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="login-labels" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -41,15 +53,22 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="logbutton" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+
+                  <button className="dashlink">  <Link className="homelink" to="/">Home</Link></button>
+
             </form>
         );
     }
 }
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
 
 export default reduxForm({
     form: 'login',
+
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);

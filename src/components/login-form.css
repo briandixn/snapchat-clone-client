@@ -1,0 +1,39 @@
+.login-form{
+  text-align: center;
+  margin: 300px;
+  margin: auto;
+}
+
+.login-labels{
+  color: skyblue;
+}
+
+.logbutton{
+  color: white;
+  background-color: lightgray;
+  border-radius: 20px;
+  margin: 20px;
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.dashlink{
+  width: 100px;
+  height: 55px;
+  padding: 0px;
+  background-color: lightgray;
+  text-align: center;
+  margin: auto;
+
+
+  border-radius: 20px;
+  border: 10px;
+
+}
+
+.homelink{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}

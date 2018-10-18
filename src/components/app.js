@@ -7,6 +7,7 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
+import LoginPage from './login-page';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {
@@ -44,6 +45,7 @@ export class App extends React.Component {
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/register" component={RegistrationPage} />
             </div>
         );
@@ -55,5 +57,5 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
+//update blocking https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));

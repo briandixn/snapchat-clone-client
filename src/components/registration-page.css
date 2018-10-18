@@ -1,0 +1,21 @@
+
+.home{
+  text-align: center;
+}
+
+.registerTitle{
+  text-align: center;
+  font-family: 'Roboto Condensed', serif;
+  font-weight: 300;
+}
+
+.logslink{
+
+  width: 100px;
+  padding: 10px;
+  text-decoration: none;
+  border: 1px;
+  background-color: lightgray;
+  color: white;
+  border-radius: 14px;
+}
